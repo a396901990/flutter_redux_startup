@@ -24,8 +24,7 @@ class HomeNewsScreen extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: newsState.news.length,
                     itemBuilder: (context, index) {
-                      return ListTile(
-                          title: Text(newsState.news[index].content));
+                      return ListTile(title: Text(newsState.news[index].desc));
                     },
                   ),
                   onRefresh: _handleRefresh,

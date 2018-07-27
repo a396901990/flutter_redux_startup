@@ -1,3 +1,3 @@
 class Constants {
-  static final String url = "";
+  static final String url = "https://gank.io/api";
 }

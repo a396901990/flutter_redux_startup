@@ -1,13 +1,13 @@
 class NewsItem {
-  final String title;
-  final String content;
+  final String url;
+  final String desc;
 
-  NewsItem({this.title, this.content});
+  NewsItem({this.url, this.desc});
 
   factory NewsItem.formJson(Map<String, dynamic> json) {
     return NewsItem(
-      title: json['title'],
-      content: json['content'],
+      url: json['url'],
+      desc: json['desc'],
     );
   }
 }

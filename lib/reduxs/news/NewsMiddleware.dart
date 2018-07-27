@@ -31,8 +31,8 @@ getNewsItems(Store<AppState> store, action) async {
 getMoreNewsItems(Store<AppState> store, action) async {
   store.dispatch(SetListStateAction(ListState.LOADING_MORE));
   try {
-    var _skip = store.state.newsState.news.length;
-    var news = await APIService.getNews(skip: _skip);
+    var _page = (store.state.newsState.news.length / 10).round() + 1;
+    var news = await APIService.getNews(page: _page);
     if (news.length > 0) {
       store.dispatch(SetMoreNewsAction(news));
       store.dispatch(SetListStateAction(ListState.SUCESS));
