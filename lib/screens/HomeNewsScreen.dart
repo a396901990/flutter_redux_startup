@@ -3,29 +3,29 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'dart:async';
 import 'package:redux/redux.dart';
 import '../reduxs/AppState.dart';
-import '../reduxs/team/TeamRedux.dart';
+import '../reduxs/news/NewsRedux.dart';
 
-class HomeTeamScreen extends StatelessWidget {
+class HomeNewsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreBuilder(
-        onInit: (Store<AppState> store) => store.dispatch(GetTeamsAction()),
+        onInit: (Store<AppState> store) => store.dispatch(GetNewsAction()),
         builder: (BuildContext context, Store<AppState> store) {
-          var teamState = store.state.teamState;
+          var newsState = store.state.newsState;
           return new Container(
             padding: const EdgeInsets.only(top: 58.0),
             child: Column(children: <Widget>[
               RaisedButton(
-                onPressed: () => store.dispatch(GetMoreTeamsAction()),
-                child: Text(teamState.listState.toString()),
+                onPressed: () => store.dispatch(GetMoreNewsAction()),
+                child: Text(newsState.listState.toString()),
               ),
               Expanded(
                 child: RefreshIndicator(
                   child: ListView.builder(
-                    itemCount: teamState.teams.length,
+                    itemCount: newsState.news.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                          title: Text(teamState.teams[index].content));
+                          title: Text(newsState.news[index].content));
                     },
                   ),
                   onRefresh: _handleRefresh,

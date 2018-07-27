@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import './team/TeamRedux.dart';
+import './news/NewsRedux.dart';
 import './home/HomeRedux.dart';
 import './AppState.dart';
 
@@ -11,6 +11,6 @@ class InitAppAction {
 AppState appReducer(AppState state, action) {
   return AppState(
     homeState: homeReducer(state.homeState, action),
-    teamState: teamReducer(state.teamState, action),
+    newsState: newsReducer(state.newsState, action),
   );
 }

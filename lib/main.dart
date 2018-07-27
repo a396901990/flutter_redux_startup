@@ -6,7 +6,7 @@ import 'package:redux_logging/redux_logging.dart';
 import 'reduxs/AppRedux.dart';
 import 'reduxs/AppState.dart';
 import 'reduxs/AppMiddleware.dart';
-import 'reduxs/team/TeamMiddleware.dart';
+import 'reduxs/news/NewsMiddleware.dart';
 import 'screens/InitScreen.dart';
 import 'screens/HomeScreen.dart';
 import 'routes.dart';
@@ -14,15 +14,15 @@ import 'routes.dart';
 void main() {
   final store = Store<AppState>(appReducer,
       initialState: AppState.init(),
-      middleware: [appMiddleware, teamMiddleware, LoggingMiddleware.printer()]);
+      middleware: [appMiddleware, newsMiddleware, LoggingMiddleware.printer()]);
 
-  runApp(TanziApp(store: store));
+  runApp(App(store: store));
 }
 
-class TanziApp extends StatelessWidget {
+class App extends StatelessWidget {
   final Store<AppState> store;
 
-  TanziApp({Key key, this.store}) : super(key: key);
+  App({Key key, this.store}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

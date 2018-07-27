@@ -6,7 +6,7 @@ import '../components/NavigationIconViewComponent.dart';
 import '../reduxs/AppState.dart';
 import '../reduxs/home/HomeRedux.dart';
 import './TestScreen.dart';
-import './HomeTeamScreen.dart';
+import './HomeNewsScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -25,24 +25,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _tabController = new PageController();
     _navigationViews = <NavigationIconViewComponent>[
       NavigationIconViewComponent(
-        icon: const Icon(Icons.show_chart),
-        title: '路线',
-        page: TestScreen('路线'),
+        icon: const Icon(Icons.group_work),
+        title: '新闻',
+        page: HomeNewsScreen(),
       ),
       NavigationIconViewComponent(
-        icon: const Icon(Icons.group_work),
-        title: '约伴',
-        page: HomeTeamScreen(),
+        icon: const Icon(Icons.show_chart),
+        title: 'Test2',
+        page: TestScreen('Test2'),
       ),
       NavigationIconViewComponent(
         icon: const Icon(Icons.book),
-        title: '发现',
-        page: TestScreen('发现'),
+        title: 'Test3',
+        page: TestScreen('Test3'),
       ),
       NavigationIconViewComponent(
         icon: const Icon(Icons.settings),
-        title: '设置',
-        page: TestScreen('设置'),
+        title: 'Test4',
+        page: TestScreen('Test4'),
       ),
     ];
   }
