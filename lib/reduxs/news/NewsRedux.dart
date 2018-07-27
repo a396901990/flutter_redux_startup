@@ -1,10 +1,10 @@
-import '../../models/Team.dart';
+import '../../models/NewsItem.dart';
 import 'package:redux/redux.dart';
 import '../AppState.dart';
 
 // ------------------ state -------------------
 class NewsState {
-  List<Team> news;
+  List<NewsItem> news;
   ListState listState;
 
   NewsState({this.news, this.listState});
@@ -16,7 +16,7 @@ class NewsState {
 
 // ------------------ action -------------------
 class SetNewsAction {
-  final List<Team> news;
+  final List<NewsItem> news;
   SetNewsAction(this.news);
 }
 
@@ -26,7 +26,7 @@ class SetListStateAction {
 }
 
 class SetMoreNewsAction {
-  final List<Team> news;
+  final List<NewsItem> news;
   SetMoreNewsAction(this.news);
 }
 
